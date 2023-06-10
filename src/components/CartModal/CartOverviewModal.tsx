@@ -49,8 +49,10 @@ function CartModal() {
 						</div>
 						{/* container for List of items inside cart */}
 						<div className="my-6 flex flex-col gap-4">
-							{cart.map((cartItem) => {
-								return <CartItem cartItem={cartItem} />;
+							{cart.map((cartItem, key) => {
+								return (
+									<CartItem key={key} cartItem={cartItem} />
+								);
 							})}
 						</div>
 						<Link

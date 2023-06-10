@@ -26,9 +26,9 @@ function ProductDetails(props: Props) {
 						in the box
 					</h3>
 					<ul className="text-sm">
-						{product.includes.map((item) => {
+						{product.includes.map((item, key) => {
 							return (
-								<li className="flex gap-5 my-2">
+								<li key={key} className="flex gap-5 my-2">
 									<span className="font-bold text-[#d87d4a]">
 										{item.quantity}x
 									</span>

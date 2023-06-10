@@ -19,6 +19,7 @@ function ProductGallery({ product }: Props) {
 					<img
 						src={`/${gallery.first.mobile}`}
 						className="object-cover w-full rounded-lg"
+						alt=""
 					/>
 				</picture>
 				{/* Second image */}
@@ -28,6 +29,7 @@ function ProductGallery({ product }: Props) {
 					<img
 						src={`/${gallery.second.mobile}`}
 						className="object-cover w-full rounded-lg"
+						alt=""
 					/>
 				</picture>
 				{/* third image */}
@@ -37,6 +39,7 @@ function ProductGallery({ product }: Props) {
 					<img
 						src={`/${gallery.third.mobile}`}
 						className="object-cover h-full w-full rounded-lg"
+						alt=""
 					/>
 				</picture>
 			</div>
