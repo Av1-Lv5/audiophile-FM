@@ -5,7 +5,7 @@ import products from "@/data/products";
 import ProductBrief from "@/components/CategoryPage/ProductBrief";
 
 // Types
-import ProductCategories from "@/types/productCategories";
+import { ProductCategories } from "@/types/productCategories";
 export type Props = {
 	productCategory: ProductCategories;
 };
