@@ -1,5 +1,5 @@
 // Next components
-import { getTotalCartItems } from "@/stores/cart";
+import { getTotalCartItems, $cart } from "@/stores/cart";
 import { $modal, toggleCartOverviewModal } from "@/stores/cartOverviewModal";
 import { toggleOverlay } from "@/stores/overlay";
 import { useStore } from "@nanostores/react";
@@ -8,6 +8,7 @@ import Image from "next/image";
 
 function CartIcon() {
 	const isCartShown = useStore($modal);
+	const cartItems = useStore($cart);
 	function showCart() {
 		toggleCartOverviewModal();
 		toggleOverlay(!isCartShown);
