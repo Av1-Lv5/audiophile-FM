@@ -19,12 +19,18 @@ function ProductBrief({ slug, images, name, description, isNew }: Props) {
 					<source
 						srcSet={`/${images.desktop}`}
 						media="(min-width: 1024px)"
+						width={1080}
+						height={1120}
 					/>
 					<source
 						srcSet={`/${images.tablet}`}
 						media="(min-width: 480px)"
+						width={1378}
+						height={704}
 					/>
 					<img
+						width={654}
+						height={704}
 						src={`/${images.mobile}`}
 						alt=""
 						className="rounded-xl"

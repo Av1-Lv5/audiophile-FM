@@ -8,14 +8,15 @@ import Image from "next/image";
 
 function CartIcon() {
 	const isCartShown = useStore($modal);
+
 	const cartItems = useStore($cart);
 	function showCart() {
 		toggleCartOverviewModal();
 		toggleOverlay(!isCartShown);
 	}
 	return (
-		<div className="relative">
-			<span className="cursor-pointer p-4" onClick={showCart}>
+		<div className="relative px-4">
+			<span className="cursor-pointer" onClick={showCart}>
 				<Image
 					width={24}
 					height={24}
@@ -23,7 +24,7 @@ function CartIcon() {
 					alt="cart icon"
 				/>
 			</span>
-			<div className="absolute top-2 right-0 bg-[#d87d4a] text-xs px-1 rounded-md">
+			<div className="absolute -top-4 right-2 bg-[#d87d4a] text-xs px-1 rounded-md">
 				{getTotalCartItems()}
 			</div>
 		</div>

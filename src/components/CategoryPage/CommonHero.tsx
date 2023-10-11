@@ -1,5 +1,5 @@
 // types
-import {ProductCategories} from "@/types/productCategories";
+import { ProductCategories } from "@/types/productCategories";
 export type Props = {
 	headerTitle: ProductCategories | undefined;
 };
