@@ -4,6 +4,14 @@ import CategoriesMenu from "@/components/CategoriesMenu";
 import CategoryProductsList from "@/components/CategoryPage/CategoryProductsList";
 import CommonHero from "@/components/CategoryPage/CommonHero";
 
+export async function generateStaticParams() {
+	const categories = ["headphones", "earphones", "speakers"];
+
+	return categories.map((categoryTitle) => ({
+		category: categoryTitle,
+	}));
+}
+
 // types
 import { ProductCategories } from "@/types/productCategories";
 export type Props = {

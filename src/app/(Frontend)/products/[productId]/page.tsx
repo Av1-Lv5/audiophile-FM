@@ -12,6 +12,12 @@ export type Props = {
 	params: { productId: string };
 };
 
+export function generateStaticParams() {
+	return products.map((eachProduct) => ({
+		id: eachProduct.id,
+	}));
+}
+
 function ProductPage({ params }: Props) {
 	const { productId } = params;
 
