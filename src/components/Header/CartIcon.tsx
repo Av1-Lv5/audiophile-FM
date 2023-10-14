@@ -15,7 +15,7 @@ function CartIcon() {
 		toggleOverlay(!isCartShown);
 	}
 	return (
-		<div className="relative px-4">
+		<div className="relative px-4 select-none">
 			<span className="cursor-pointer" onClick={showCart}>
 				<Image
 					width={24}

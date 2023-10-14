@@ -42,7 +42,7 @@ function Header() {
 			}}
 		>
 			{/* flex container */}
-			<div className="container mx-auto py-6 px-4 flex justify-between items-center text-white h-20 lg:px-20">
+			<div className="container mx-auto py-6 px-4 flex justify-between items-center text-white h-20 lg:px-20 select-none">
 				<div className="flex gap-8 items-center">
 					<MobileNavMenu />
 					{/* LOGO */}

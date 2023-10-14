@@ -19,15 +19,21 @@ function ProductIntro(props: Props) {
 						<source
 							srcSet={`/${product.image.desktop}`}
 							media="(min-width: 1024px)"
+							width={1080}
+							height={1120}
 						/>
 						<source
 							srcSet={`/${product.image.tablet}`}
 							media="(min-width: 640px)"
+							width={562}
+							height={960}
 						/>
 						<img
 							src={`/${product.image.mobile}`}
 							alt=""
 							className="rounded-xl"
+							width={654}
+							height={654}
 						/>
 					</picture>
 				</div>
