@@ -1,6 +1,4 @@
 // Components
-import AboutUs from "@/components/AboutUs";
-import CategoriesMenu from "@/components/CategoriesMenu";
 import ProductPageContent from "@/components/ProductPage/ProductPageContent";
 import GoBack from "@/components/GoBack";
 
@@ -38,8 +36,6 @@ function ProductPage({ params }: Props) {
 					404: Product does not exist
 				</h2>
 			)}
-			<CategoriesMenu />
-			<AboutUs />
 		</main>
 	);
 }

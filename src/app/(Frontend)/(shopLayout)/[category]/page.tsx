@@ -1,8 +1,5 @@
 // Components
-import AboutUs from "@/components/AboutUs";
-import CategoriesMenu from "@/components/CategoriesMenu";
 import CategoryProductsList from "@/components/CategoryPage/CategoryProductsList";
-import CommonHero from "@/components/CategoryPage/CommonHero";
 
 export async function generateStaticParams() {
 	const categories = ["headphones", "earphones", "speakers"];
@@ -24,18 +21,9 @@ function CategoryPage({ params }: Props) {
 	const { category } = params;
 
 	return (
-		<main>
-			{category === "earphones" ||
-			category === "headphones" ||
-			category === "speakers" ? (
-				<CommonHero headerTitle={`${category}`} />
-			) : (
-				<CommonHero headerTitle={undefined} />
-			)}
+		<>
 			<CategoryProductsList productCategory={`${category}`} />
-			<CategoriesMenu />
-			<AboutUs />
-		</main>
+		</>
 	);
 }
 
