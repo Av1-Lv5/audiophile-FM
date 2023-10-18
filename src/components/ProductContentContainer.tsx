@@ -34,7 +34,7 @@ function ProductContentContainer(props: Props) {
 			>
 				{name}
 			</h2>
-			<p className="opacity-75 text-sm">{description}</p>
+			<p className="opacity-75 text-base">{description}</p>
 			{
 				<Link href={`/products/${slug}`}>
 					<StyledButton text="See product" bgColor="accent" />

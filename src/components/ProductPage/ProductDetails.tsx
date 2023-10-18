@@ -18,14 +18,14 @@ function ProductDetails(props: Props) {
 					<h3 className="text-3xl mb-8 font-semibold tracking-wider uppercase">
 						Features
 					</h3>
-					<p className="opacity-60 text-sm">{product.features}</p>
+					<p className="opacity-60 text-base">{product.features}</p>
 				</div>
 				{/* In the box */}
 				<div>
 					<h3 className="text-3xl mb-8 font-semibold tracking-wider uppercase">
 						in the box
 					</h3>
-					<ul className="text-sm">
+					<ul className="text-base">
 						{product.includes.map((item, key) => {
 							return (
 								<li key={key} className="flex gap-5 my-2">

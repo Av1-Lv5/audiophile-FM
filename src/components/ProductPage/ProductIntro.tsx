@@ -46,7 +46,9 @@ function ProductIntro(props: Props) {
 					<h2 className="text-3xl md:text-4xl uppercase font-semibold tracking-wide">
 						{product.name}
 					</h2>
-					<p className="opacity-75 text-sm">{product.description}</p>
+					<p className="opacity-75 text-base">
+						{product.description}
+					</p>
 					<p className="font-bold text-base tracking-wider">
 						${product.price}
 					</p>

@@ -55,7 +55,7 @@ function Header() {
 				</div>
 				{/* Desk Nav */}
 				<nav className="max-lg:hidden">
-					<div className="flex gap-3 text-xs">
+					<div className="flex gap-3 text-sm">
 						<NavItems />
 					</div>
 				</nav>
