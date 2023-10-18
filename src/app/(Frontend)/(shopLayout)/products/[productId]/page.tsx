@@ -3,7 +3,7 @@ import ProductPageContent from "@/components/ProductPage/ProductPageContent";
 import GoBack from "@/components/GoBack";
 
 // Data
-import products from "@/data/products";
+import products from "@/data/products.json";
 
 // Types
 export type Props = {
@@ -16,7 +16,7 @@ export function generateStaticParams() {
 	}));
 }
 
-function ProductPage({ params }: Props) {
+async function ProductPage({ params }: Props) {
 	const { productId } = params;
 
 	const currentProduct = products.find((product) => {
