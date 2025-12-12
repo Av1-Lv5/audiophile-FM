@@ -1,32 +1,32 @@
 // Components
 import ProductPageContent from "@/components/ProductPage/ProductPageContent";
 import GoBack from "@/components/GoBack";
-
-// Data
-import products from "@/data/products.json";
+import { getAllProducts, getProduct } from "@/utils/sanity-utils";
+import { Product } from "@/types/product";
 
 // Types
 export type Props = {
 	params: { productId: string };
 };
 
-export function generateStaticParams() {
+// READ: https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
+export const dynamicParams = false;
+
+// READ: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
+export async function generateStaticParams() {
+	const products: Product[] = await getAllProducts();
 	return products.map((eachProduct) => ({
-		id: eachProduct.id,
+		productId: eachProduct.slug.current,
 	}));
 }
 
 async function ProductPage({ params }: Props) {
-	const { productId } = params;
-
-	const currentProduct = products.find((product) => {
-		return product.slug === productId;
-	});
-
+	const product = await getProduct(params.productId);
+	const currentProduct = product[0];
 	return (
 		<main>
 			<div className="h-20 bg-black"></div>
-			{currentProduct !== undefined ? (
+			{currentProduct ? (
 				<>
 					<GoBack slug={currentProduct.category} />
 					<ProductPageContent product={currentProduct} />

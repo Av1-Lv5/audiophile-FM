@@ -1,9 +1,14 @@
 "use client";
-import Button from "@/components/UI/Button";
 import CheckoutSummaryItem from "./CheckoutSummaryItem";
-import SummaryPrice from "./SummaryPrice";
 import { useStore } from "@nanostores/react";
 import { $cart, getTotalCartItems, getTotalPrice } from "@/stores/cart";
+import StyledButton from "@/components/UI/Button";
+
+type SummaryPriceProps = {
+	name: string;
+	price: number;
+	accent?: boolean;
+};
 
 function CheckoutSummary() {
 	const cart = useStore($cart);
@@ -17,9 +22,9 @@ function CheckoutSummary() {
 
 					return (
 						<CheckoutSummaryItem
-							name={product.name}
-							key={product.id}
-							image={`image-${product.slug}`}
+							name={product.shortName}
+							key={product.slug.current}
+							image={product.cartImage.asset._ref}
 							price={product.price}
 							quantity={quantity}
 						/>
@@ -48,8 +53,20 @@ function CheckoutSummary() {
 			/>
 
 			<div className="w-full mt-6">
-				<Button text="Continue & pay" bgColor="accent" />
+				<StyledButton text="Continue & pay" />
 			</div>
+		</div>
+	);
+}
+
+function SummaryPrice(props: SummaryPriceProps) {
+	const { name, price, accent } = props;
+	return (
+		<div className="flex justify-between uppercase text-sm">
+			<p className="opacity-60">{name}</p>
+			<p className={`${accent ? "text-[#d87d4a]" : ""} font-bold`}>
+				$ {price.toFixed(2)}
+			</p>
 		</div>
 	);
 }

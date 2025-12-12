@@ -1,6 +1,7 @@
-import { Product } from "@/types/product";
+import type { Product } from "@/types/product";
 
 import AddToCart from "./AddToCart";
+import { urlFor } from "@/utils/sanity-client";
 
 export type Props = {
 	product: Product;
@@ -8,6 +9,7 @@ export type Props = {
 
 function ProductIntro(props: Props) {
 	const { product } = props;
+	console.log("product", product.productImage.desktop.asset._ref);
 
 	return (
 		<section id="product-intro">
@@ -17,19 +19,25 @@ function ProductIntro(props: Props) {
 				<div className="w-full">
 					<picture>
 						<source
-							srcSet={`/${product.image.desktop}`}
+							srcSet={urlFor(
+								product.productImage.desktop.asset
+							).url()}
 							media="(min-width: 1024px)"
 							width={1080}
 							height={1120}
 						/>
 						<source
-							srcSet={`/${product.image.tablet}`}
+							srcSet={urlFor(
+								product.productImage.tablet.asset
+							).url()}
 							media="(min-width: 640px)"
 							width={562}
 							height={960}
 						/>
 						<img
-							src={`/${product.image.mobile}`}
+							src={urlFor(
+								product.productImage.mobile.asset
+							).url()}
 							alt=""
 							className="rounded-xl"
 							width={654}

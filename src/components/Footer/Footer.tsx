@@ -36,7 +36,6 @@ function Footer() {
 					<p className="opacity-60">
 						Copyright 2021. All Rights Reserved
 					</p>
-					{/* Social icons contianer */}
 					<SocialIcons />
 				</div>
 			</div>

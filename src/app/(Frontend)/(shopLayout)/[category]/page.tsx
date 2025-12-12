@@ -1,27 +1,33 @@
 // Components
 import CategoryProductsList from "@/components/CategoryPage/CategoryProductsList";
-
-export async function generateStaticParams() {
-	const categories = ["headphones", "earphones", "speakers"];
-
-	return categories.map((categoryTitle) => ({
-		category: categoryTitle,
-	}));
-}
+import CommonHero from "@/components/CategoryPage/CommonHero";
 
 // types
 import { ProductCategories } from "@/types/productCategories";
-export type Props = {
+type Props = {
 	params: {
 		category: ProductCategories;
 	};
 };
+
+// READ: https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
+export const dynamicParams = false;
+
+// READ: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
+export async function generateStaticParams() {
+	const categories = ["headphones", "earphones", "speakers"];
+
+	return categories.map((category) => ({
+		category,
+	}));
+}
 
 function CategoryPage({ params }: Props) {
 	const { category } = params;
 
 	return (
 		<>
+			<CommonHero headerTitle={`${category}`} />
 			<CategoryProductsList productCategory={`${category}`} />
 		</>
 	);

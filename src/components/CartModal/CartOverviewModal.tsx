@@ -10,12 +10,12 @@ import Link from "next/link";
 function CartModal() {
 	const cart = useStore($cart);
 	const totalItems = getTotalCartItems();
+	const isCartEmpty = cart.length === 0;
+
 	return (
 		<div className="container mx-auto px-6 lg:px-20">
-			{/* cart modal content container */}
 			<div className="bg-white max-w-sm ml-auto px-6 py-8 rounded-md pointer-events-auto">
-				{/* If cart is empty */}
-				{cart.length === 0 ? (
+				{isCartEmpty ? (
 					<div>
 						<p className="flex items-center justify-center uppercase font-semibold text-lg h-36">
 							Your Cart is Empty
@@ -26,10 +26,7 @@ function CartModal() {
 								toggleOverlay(false);
 							}}
 						>
-							<StyledButton
-								text="Continue shopping"
-								bgColor="accent"
-							/>
+							<StyledButton text="Continue shopping" />
 						</div>
 					</div>
 				) : (
@@ -47,7 +44,6 @@ function CartModal() {
 								Remove all
 							</button>
 						</div>
-						{/* container for List of items inside cart */}
 						<div className="my-6 flex flex-col gap-4">
 							{cart.map((cartItem, key) => {
 								return (
@@ -62,7 +58,7 @@ function CartModal() {
 								toggleOverlay(false);
 							}}
 						>
-							<StyledButton bgColor="accent" text="Checkout" />
+							<StyledButton text="Checkout" />
 						</Link>
 					</>
 				)}

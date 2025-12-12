@@ -1,10 +1,12 @@
+// Next components
 import Link from "next/link";
 
-export type Props = {
+// Types
+type GoBackProps = {
 	slug: string;
 };
 
-function GoBack({ slug }: Props) {
+function GoBack({ slug }: GoBackProps) {
 	return (
 		<div className="container mx-auto mb-8 mt-12 px-6 lg:px-20">
 			<Link

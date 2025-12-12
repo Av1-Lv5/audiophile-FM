@@ -1,14 +1,17 @@
-export type Props = {
+type RadioBtnProps = {
 	id: string;
 	label: string;
 	isDefault?: true;
 	radioGroup: string;
+	className?: string;
 };
 
-function RadioBtn(props: Props) {
-	const { id, label, isDefault, radioGroup } = props;
+function RadioBtn(props: RadioBtnProps) {
+	const { id, label, isDefault, radioGroup, className } = props;
 	return (
-		<label className="flex items-center gap-3 px-4 cursor-pointer hover:border-[#d87d4a] text-xs font-medium py-4 border border-[#cfcfcf] rounded-lg">
+		<label
+			className={`flex items-center gap-3 px-4 cursor-pointer hover:border-[#d87d4a] text-xs font-medium py-4 border border-[#cfcfcf] rounded-lg ${className}`}
+		>
 			<input
 				type="radio"
 				defaultChecked={isDefault ? true : false}
@@ -20,7 +23,5 @@ function RadioBtn(props: Props) {
 		</label>
 	);
 }
-
-// [#d87d4a] [#cfcfcf]
 
 export default RadioBtn;

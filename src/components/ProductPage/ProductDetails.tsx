@@ -1,13 +1,13 @@
 /* This component is only used inside ProductPageContent.tsx component */
 
-import { Product } from "@/types/product";
+import type { Product } from "@/types/product";
 
 // Types
-export type Props = {
+export type ProductDetailsProps = {
 	product: Product;
 };
 
-function ProductDetails(props: Props) {
+function ProductDetails(props: ProductDetailsProps) {
 	const { product } = props;
 	return (
 		<section id="product-details">
@@ -26,14 +26,15 @@ function ProductDetails(props: Props) {
 						in the box
 					</h3>
 					<ul className="text-base">
-						{product.includes.map((item, key) => {
+						{product.includes?.map((included, key) => {
+							if (!included?.item) return null;
 							return (
 								<li key={key} className="flex gap-5 my-2">
 									<span className="font-bold text-[#d87d4a]">
-										{item.quantity}x
+										{included.quantity}x
 									</span>
 									<span className="opacity-60">
-										{item.item}
+										{included.item.itemName}
 									</span>
 								</li>
 							);

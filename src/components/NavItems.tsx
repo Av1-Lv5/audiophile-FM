@@ -2,40 +2,31 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const NAVITEMS = [
+	{ href: "/", name: "HOME" },
+	{ href: "/headphones", name: "HEADPHONES" },
+	{ href: "/speakers", name: "SPEAKERS" },
+	{ href: "/earphones", name: "EARPHONES" },
+];
+
 function NavItems() {
 	const currentPath = usePathname();
 	return (
 		<>
-			<Link
-				href={"/"}
-				className="hover:text-orange-400 lg:p-2 tracking-widest"
-			>
-				HOME
-			</Link>
-			<Link
-				href={"/headphones"}
-				className={`${
-					currentPath === "/headphones" ? "current" : ""
-				} hover:text-orange-400 lg:p-2 tracking-widest`}
-			>
-				HEADPHONES
-			</Link>
-			<Link
-				href={"/speakers"}
-				className={`${
-					currentPath === "/speakers" ? "current" : ""
-				} hover:text-orange-400 lg:p-2 tracking-widest`}
-			>
-				SPEAKERS
-			</Link>
-			<Link
-				href={"/earphones"}
-				className={`${
-					currentPath === "/earphones" ? "current" : ""
-				} hover:text-orange-400 lg:p-2 tracking-widest`}
-			>
-				EARPHONES
-			</Link>
+			{NAVITEMS.map((eachNavItem) => {
+				return (
+					<Link
+						key={eachNavItem.name}
+						href={eachNavItem.href}
+						className={`hover:text-orange-400 lg:p-2 tracking-widest ${
+							currentPath === eachNavItem.href &&
+							"text-orange-400"
+						}`}
+					>
+						{eachNavItem.name}
+					</Link>
+				);
+			})}
 		</>
 	);
 }

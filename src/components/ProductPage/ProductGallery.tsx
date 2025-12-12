@@ -1,6 +1,7 @@
 /* This component is used only in ProductPageContent.tsx component */
 
-import { Product } from "@/types/product";
+import type { Product } from "@/types/product";
+import { urlFor } from "@/utils/sanity-client";
 
 export type Props = {
 	product: Product;
@@ -14,30 +15,38 @@ function ProductGallery({ product }: Props) {
 			<div className="container px-6 lg:px-20 mx-auto my-12 lg:my-20 grid gap-6 sm:grid-cols-2 sm:grid-rows-2">
 				{/* First image */}
 				<picture>
-					<source srcSet={`/${gallery.first.desktop}`} />
-					<source srcSet={`/${gallery.first.tablet}`} />
+					<source
+						srcSet={urlFor(gallery.first.desktop.asset).url()}
+					/>
+					<source srcSet={urlFor(gallery.first.tablet.asset).url()} />
 					<img
-						src={`/${gallery.first.mobile}`}
+						src={urlFor(gallery.first.mobile.asset).url()}
 						className="object-cover w-full rounded-lg"
 						alt=""
 					/>
 				</picture>
 				{/* Second image */}
 				<picture className="col-start-1 row-start-2">
-					<source srcSet={`/${gallery.second.desktop}`} />
-					<source srcSet={`/${gallery.second.tablet}`} />
+					<source
+						srcSet={urlFor(gallery.second.desktop.asset).url()}
+					/>
+					<source
+						srcSet={urlFor(gallery.second.tablet.asset).url()}
+					/>
 					<img
-						src={`/${gallery.second.mobile}`}
+						src={urlFor(gallery.second.mobile.asset).url()}
 						className="object-cover w-full rounded-lg"
 						alt=""
 					/>
 				</picture>
 				{/* third image */}
 				<picture className="row-span-2">
-					<source srcSet={`/${gallery.third.desktop}`} />
-					<source srcSet={`/${gallery.third.tablet}`} />
+					<source
+						srcSet={urlFor(gallery.third.desktop.asset).url()}
+					/>
+					<source srcSet={urlFor(gallery.third.tablet.asset).url()} />
 					<img
-						src={`/${gallery.third.mobile}`}
+						src={urlFor(gallery.third.mobile.asset).url()}
 						className="object-cover h-full w-full rounded-lg"
 						alt=""
 					/>

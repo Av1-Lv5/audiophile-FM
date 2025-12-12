@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { urlFor } from "@/utils/sanity-client";
 
 export type Props = {
 	image: string;
@@ -10,15 +10,12 @@ export type Props = {
 function CheckoutSummaryItem(props: Props) {
 	const { image, name, price, quantity } = props;
 	return (
-		<div className="flex items-center gap-3">
+		<div className="flex items-start gap-3">
 			<div className="w-14 h-14">
-				<Image
-					src={`/assets/cart/${image}.jpg`}
+				<img
+					src={urlFor(image).url()}
 					alt=""
-					width="0"
-					height="0"
-					sizes="100vw"
-					className="w-full rounded-md h-auto"
+					className="rounded-lg object-cover w-full h-full object-center"
 				/>
 			</div>
 			<div className="font-semibold flex grow justify-between items-start">

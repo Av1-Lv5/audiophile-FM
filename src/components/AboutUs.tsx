@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 // Images
-import bestGearMob from "@/../public/assets/shared/mobile/image-best-gear.jpg";
+import bestGearMob from "/public/assets/shared/mobile/image-best-gear.jpg";
 
 function AboutUs() {
 	return (

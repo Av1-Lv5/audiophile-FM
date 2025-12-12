@@ -2,15 +2,17 @@
 
 import Link from "next/link";
 import Button from "../UI/Button";
+import { SanityImageObject } from "@sanity/image-url/lib/types/types";
+import { urlFor } from "@/utils/sanity-client";
 
 // Types
 export type Props = {
 	slug: string;
 	name: string;
 	image: {
-		mobile: string;
-		tablet: string;
-		desktop: string;
+		mobile: SanityImageObject;
+		tablet: SanityImageObject;
+		desktop: SanityImageObject;
 	};
 };
 
@@ -21,15 +23,15 @@ function ProductCard(props: Props) {
 			<div>
 				<picture>
 					<source
-						srcSet={`/${image.desktop}`}
+						srcSet={urlFor(image.desktop.asset._ref).url()}
 						media="(min-width: 1080px)"
 					/>
 					<source
-						srcSet={`/${image.tablet}`}
+						srcSet={urlFor(image.tablet.asset._ref).url()}
 						media="(min-width: 640px)"
 					/>
 					<img
-						src={`/${image.mobile}`}
+						src={urlFor(image.mobile.asset._ref).url()}
 						alt=""
 						className="rounded-md"
 					/>
@@ -39,7 +41,7 @@ function ProductCard(props: Props) {
 				{name}
 			</p>
 			<Link href={`/products/${slug}`}>
-				<Button text="See product" bgColor="accent" />
+				<Button text="See product" />
 			</Link>
 		</div>
 	);

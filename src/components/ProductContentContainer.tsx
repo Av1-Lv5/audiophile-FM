@@ -1,24 +1,20 @@
 import Link from "next/link";
 import StyledButton from "./UI/Button";
+import type { Product } from "@/types/product";
 
 export type Props = {
-	isNew: boolean;
+	product: Product;
 	isHomePage?: boolean;
-	name: string;
-	description: string;
-	slug: string;
 };
 
-function ProductContentContainer(props: Props) {
-	const { isNew, slug, isHomePage, name, description } = props;
-
+function ProductContentContainer({ product, isHomePage }: Props) {
 	return (
 		<div
 			className={`${
 				isHomePage ? "mt-20 max-w-[400px]" : "lg:max-w-[45%]"
 			} flex gap-5 flex-col items-center text-center lg:items-start lg:text-start`}
 		>
-			{isNew && (
+			{product.new && (
 				<p
 					className={`${
 						isHomePage ? "opacity-80" : "text-[#d87d4a]"
@@ -32,14 +28,13 @@ function ProductContentContainer(props: Props) {
 					isHomePage ? "sm:text-5xl text-4xl" : "text-3xl md:text-4xl"
 				} uppercase font-semibold tracking-wide `}
 			>
-				{name}
+				{product.name}
 			</h2>
-			<p className="opacity-75 text-base">{description}</p>
-			{
-				<Link href={`/products/${slug}`}>
-					<StyledButton text="See product" bgColor="accent" />
-				</Link>
-			}
+			<p className="opacity-75 text-base">{product.description}</p>
+
+			<Link href={`/products/${product.slug?.current}`}>
+				<StyledButton text="See product" />
+			</Link>
 		</div>
 	);
 }

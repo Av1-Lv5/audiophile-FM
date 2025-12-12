@@ -62,17 +62,17 @@ function CheckoutDetails() {
 				</p>
 				<div className="mt-6 text-xs font-semibold">Payment Method</div>
 				<div className="mt-6 grid gap-2 sm:grid-cols-2 sm:grid-rows-2 sm:gap-4">
-					<div></div>
 					<RadioBtn
 						id="e-Money"
 						label="e-Money"
 						radioGroup="payment-option"
+						className="sm:col-start-2"
 						isDefault={true}
 					/>
-					<div></div>
 					<RadioBtn
 						id="cash"
 						label="Cash on Delivery"
+						className="sm:col-start-2 sm:row-start-2"
 						radioGroup="payment-option"
 					/>
 				</div>

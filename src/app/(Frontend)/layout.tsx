@@ -18,6 +18,7 @@ import CartModal from "@/components/CartModal/CartOverviewModal";
 function RootLayout({ children }: { children: React.ReactNode }) {
 	const isOverlayShown = useStore($overlay);
 	const isModalShown = useStore($modal);
+
 	return (
 		<html lang="en">
 			<body

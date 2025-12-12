@@ -1,17 +1,28 @@
+import { SanityImageObject } from "@sanity/image-url/lib/types/types";
+
 export interface Product {
-	id: number;
-	slug: string;
-	name: string;
-	image: {
-		mobile: string;
-		tablet: string;
-		desktop: string;
+	_createdAt: string;
+	_id: string;
+	_rev: string;
+	_type: string;
+	_updatedAt: string;
+	slug: {
+		_type: string;
+		current: string;
 	};
+	name: string;
+	shortName: string;
 	category: string;
+	cartImage: SanityImageObject;
+	productImage: {
+		mobile: SanityImageObject;
+		tablet: SanityImageObject;
+		desktop: SanityImageObject;
+	};
 	categoryImage: {
-		mobile: string;
-		tablet: string;
-		desktop: string;
+		mobile: SanityImageObject;
+		tablet: SanityImageObject;
+		desktop: SanityImageObject;
 	};
 	new: boolean;
 	price: number;
@@ -19,32 +30,26 @@ export interface Product {
 	features: string;
 	includes: {
 		quantity: number;
-		item: string;
+		item: {
+			itemName: string;
+		};
 	}[];
 	gallery: {
 		first: {
-			mobile: string;
-			tablet: string;
-			desktop: string;
+			mobile: SanityImageObject;
+			tablet: SanityImageObject;
+			desktop: SanityImageObject;
 		};
 		second: {
-			mobile: string;
-			tablet: string;
-			desktop: string;
+			mobile: SanityImageObject;
+			tablet: SanityImageObject;
+			desktop: SanityImageObject;
 		};
 		third: {
-			mobile: string;
-			tablet: string;
-			desktop: string;
+			mobile: SanityImageObject;
+			tablet: SanityImageObject;
+			desktop: SanityImageObject;
 		};
 	};
-	others: {
-		slug: string;
-		name: string;
-		image: {
-			mobile: string;
-			tablet: string;
-			desktop: string;
-		};
-	}[];
+	youMayLike: Product[];
 }

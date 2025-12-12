@@ -1,45 +1,40 @@
-// Next components
-import Image from "next/image";
+import HomeHero from "@/components/HomePage/HomeHero";
+import { getFeaturedProduct } from "@/utils/sanity-utils";
+import { urlFor } from "@/utils/sanity-client";
 
-// images
-import homeHeroImg from "@/../../public/assets/home/mobile/image-header.jpg";
-import ProductContentContainer from "@/components/ProductContentContainer";
+export default async function Home() {
+	const featuredProduct = await getFeaturedProduct();
+	const product = featuredProduct[0].selectProduct;
+	console.log(featuredProduct[0]);
 
-export default function Home() {
 	return (
 		<section id="hero" className="h-[650px]">
 			{/* Hero background image container */}
 			<div className="absolute top-0 w-full h-[650px] bg-[#191919]">
 				<picture>
 					<source
-						srcSet="/assets/home/desktop/image-hero.jpg"
+						srcSet={urlFor(
+							featuredProduct[0].image.desktop.asset
+						).url()}
 						media="(min-width: 1024px)"
 					/>
 					<source
-						srcSet="/assets/home/tablet/image-header.jpg"
-						media="(min-width: 400px)"
+						srcSet={urlFor(
+							featuredProduct[0].image.tablet.asset
+						).url()}
+						media="(min-width: 640px)"
 					/>
-					<Image
-						src={homeHeroImg}
+					<img
+						src={urlFor(
+							featuredProduct[0].image.mobile.asset
+						).url()}
+						alt=""
 						className="object-cover w-auto mx-auto h-full"
-						alt="Image of a black headphone"
 					/>
 				</picture>
 			</div>
 			{/* Hero section */}
-			<div className="absolute top-0 w-full h-[650px]">
-				{/* flex container */}
-				<div className="container mx-auto px-4 flex items-center justify-center text-white lg:justify-start lg:px-20 h-full">
-					{/* Content container */}
-					<ProductContentContainer
-						isHomePage={true}
-						isNew={true}
-						name="XX99 MARK II HEADPHONE"
-						description="Experience natural life like auido and exceptional built quality made for the passionate music enthusiast"
-						slug="xx99-mark-two-headphones"
-					/>
-				</div>
-			</div>
+			<HomeHero product={product} />
 		</section>
 	);
 }

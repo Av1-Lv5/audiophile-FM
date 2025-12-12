@@ -1,30 +1,23 @@
-// Data
-import products from "@/data/products.json";
-
 // Components
 import ProductBrief from "@/components/CategoryPage/ProductBrief";
 
 // Types
 import { ProductCategories } from "@/types/productCategories";
+import { Product } from "@/types/product";
+import { getAllProducts } from "@/utils/sanity-utils";
+
 export type Props = {
 	productCategory: ProductCategories;
 };
 
-function CategoryProductsList({ productCategory }: Props) {
+async function CategoryProductsList({ productCategory }: Props) {
+	const products = await getAllProducts();
+
 	return (
 		<section id="products">
-			{products.map((product, index) => {
+			{products.map((product: Product) => {
 				if (product.category === productCategory)
-					return (
-						<ProductBrief
-							key={index}
-							slug={product.slug}
-							name={product.name}
-							description={product.description}
-							images={product.categoryImage}
-							isNew={product.new}
-						/>
-					);
+					return <ProductBrief product={product} key={product._id} />;
 			})}
 		</section>
 	);

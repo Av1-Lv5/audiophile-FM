@@ -6,28 +6,31 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"typegen": "sanity schema extract && sanity typegen generate"
 	},
 	"packageManager": "pnpm@8.5.1",
 	"dependencies": {
-		"@nanostores/react": "^0.7.1",
-		"@types/node": "20.1.1",
-		"@types/react": "18.2.6",
-		"@types/react-dom": "18.2.4",
-		"autoprefixer": "10.4.14",
-		"eslint": "8.40.0",
-		"eslint-config-next": "13.4.1",
-		"nanostores": "^0.9.3",
-		"next": "13.5.4",
-		"next-sanity": "^5.5.5",
-		"postcss": "8.4.23",
+		"@nanostores/react": "^0.7.2",
+		"@sanity/image-url": "^1.0.2",
+		"@sanity/vision": "^3.38.0",
+		"@types/node": "20.12.7",
+		"@types/react": "18.2.79",
+		"@types/react-dom": "18.2.25",
+		"autoprefixer": "10.4.19",
+		"eslint": "9.1.1",
+		"eslint-config-next": "14.2.2",
+		"nanostores": "^0.10.3",
+		"next": "14.2.2",
+		"next-sanity": "^9.0.8",
+		"postcss": "8.4.38",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"sanity": "^3.18.0",
-		"tailwindcss": "3.3.2",
-		"typescript": "5.0.4"
+		"sanity": "^3.38.0",
+		"tailwindcss": "3.4.3",
+		"typescript": "5.4.5"
 	},
 	"devDependencies": {
-		"sharp": "^0.32.6"
+		"sharp": "^0.33.3"
 	}
 }

@@ -1,5 +1,6 @@
 import { addCartItem, removeCartItem } from "@/stores/cart";
-import { CartItem } from "@/types/cartItem";
+import type { CartItem } from "@/types/cartItem";
+import { urlFor } from "@/utils/sanity-client";
 import Image from "next/image";
 
 export type Props = {
@@ -8,21 +9,18 @@ export type Props = {
 function CartItem(props: Props) {
 	const { cartItem } = props;
 	return (
-		<div className="flex items-center gap-3">
-			<div className="w-14 h-14">
-				<Image
-					src={`/assets/cart/image-${cartItem.product.slug}.jpg`}
+		<div className="flex items-start gap-3">
+			<div className="w-14 h-14 shrink-0">
+				<img
+					src={urlFor(cartItem.product.cartImage).url()}
 					alt=""
-					width="0"
-					height="0"
-					sizes="100vw"
-					className="w-full rounded-md h-auto"
+					className="rounded-lg h-full w-full object-cover object-center"
 				/>
 			</div>
 			<div className="font-semibold flex grow justify-between items-start">
 				<div>
 					<p className="uppercase mb-1 text-sm">
-						{cartItem.product.name}
+						{cartItem.product.shortName}
 					</p>
 					<p className="opacity-60 text-xs">
 						${cartItem.product.price}

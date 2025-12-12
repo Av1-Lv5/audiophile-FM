@@ -9,7 +9,7 @@ export function addCartItem(newCartItem: CartItem) {
 	let isAlreadyExist = false;
 
 	$cart.get().forEach((cartItem) => {
-		if (cartItem.product.id === newCartItem.product.id) {
+		if (cartItem.product._id === newCartItem.product._id) {
 			isAlreadyExist = true;
 		}
 	});
@@ -19,7 +19,7 @@ export function addCartItem(newCartItem: CartItem) {
 	// if newItem already exist we have to update the count. else just add newItem to end
 	if (isAlreadyExist) {
 		updatedCart = $cart.get().map((cartItem) => {
-			if (cartItem.product.id === newCartItem.product.id) {
+			if (cartItem.product._id === newCartItem.product._id) {
 				cartItem.quantity += newCartItem.quantity;
 			}
 
@@ -35,9 +35,10 @@ export function addCartItem(newCartItem: CartItem) {
 export function removeCartItem(cartItem: CartItem) {
 	let updatedCart: CartItem[];
 	const cart = $cart.get();
+
 	if (cartItem.quantity > 1) {
 		updatedCart = cart.map((item) => {
-			if (item.product.id === cartItem.product.id) {
+			if (item.product._id === cartItem.product._id) {
 				item.quantity--;
 			}
 			return item;
@@ -46,7 +47,6 @@ export function removeCartItem(cartItem: CartItem) {
 		const indexOfItemToDelete = cart.indexOf(cartItem);
 		cart.splice(indexOfItemToDelete, 1);
 		updatedCart = [...cart];
-		console.log(cart);
 	}
 
 	$cart.set(updatedCart);

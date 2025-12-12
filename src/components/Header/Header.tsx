@@ -23,7 +23,7 @@ function Header() {
 
 		function handleScroll() {
 			setHeaderBgOpacity(
-				Math.min(document.documentElement.scrollTop / 40, 1)
+				Math.min(document.documentElement.scrollTop / 40, 1),
 			);
 		}
 

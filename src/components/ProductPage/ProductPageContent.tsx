@@ -16,7 +16,7 @@ function ProductPageContent({ product }: Props) {
 			<ProductIntro product={product} />
 			<ProductDetails product={product} />
 			<ProductGallery product={product} />
-			<YouMayLike product={product} />
+			<YouMayLike otherProducts={product.youMayLike} />
 		</div>
 	);
 }
