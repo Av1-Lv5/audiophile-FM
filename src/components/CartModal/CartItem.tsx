@@ -1,7 +1,6 @@
 import { addCartItem, removeCartItem } from "@/stores/cart";
 import type { CartItem } from "@/types/cartItem";
 import { urlFor } from "@/utils/sanity-client";
-import Image from "next/image";
 
 export type Props = {
 	cartItem: CartItem;

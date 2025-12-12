@@ -1,9 +1,3 @@
-// Next components
-import Image from "next/image";
-
-// Images
-import bestGearMob from "/public/assets/shared/mobile/image-best-gear.jpg";
-
 function AboutUs() {
 	return (
 		<section id="about-us">
@@ -19,8 +13,8 @@ function AboutUs() {
 							srcSet="/assets/shared/tablet/image-best-gear.jpg"
 							media="(min-width: 400px)"
 						/>
-						<Image
-							src={bestGearMob}
+						<img
+							src="/assets/shared/mobile/image-best-gear.jpg"
 							alt=""
 							className="rounded-md"
 						/>

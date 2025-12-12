@@ -1,5 +1,4 @@
 // Next components
-import Image from "next/image";
 
 function SocialIcons() {
 	return (
@@ -9,7 +8,7 @@ function SocialIcons() {
 				target="_blank"
 				className="cursor-pointer p-2"
 			>
-				<Image
+				<img
 					width={24}
 					height={24}
 					src={"/assets/social-icons/facebook-logo.svg"}
@@ -21,7 +20,7 @@ function SocialIcons() {
 				target="_blank"
 				className="cursor-pointer p-2"
 			>
-				<Image
+				<img
 					width={24}
 					height={24}
 					src={"/assets/social-icons/twitter-logo.svg"}
@@ -33,7 +32,7 @@ function SocialIcons() {
 				target="_blank"
 				className="cursor-pointer p-2"
 			>
-				<Image
+				<img
 					width={24}
 					height={24}
 					src={"/assets/social-icons/insta-logo.svg"}

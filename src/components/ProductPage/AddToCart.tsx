@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/UI/Button";
+import StyledButton from "@/components/UI/Button";
 import Counter from "./Counter";
 import { Product } from "@/types/product";
 import { useState } from "react";
@@ -20,7 +20,7 @@ function AddToCart({ product }: Props) {
 		<div className="flex gap-5 items-center flex-wrap">
 			<Counter count={count} setCount={setCount} />
 			<div onClick={handleAddToCart}>
-				<Button text="Add to cart" bgColor="accent" />
+				<StyledButton text="Add to cart" />
 			</div>
 		</div>
 	);

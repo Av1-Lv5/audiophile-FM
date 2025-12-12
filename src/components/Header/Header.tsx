@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 // next Components
-import Image from "next/image";
 import Link from "next/link";
 
 // Components
@@ -23,7 +22,7 @@ function Header() {
 
 		function handleScroll() {
 			setHeaderBgOpacity(
-				Math.min(document.documentElement.scrollTop / 40, 1),
+				Math.min(document.documentElement.scrollTop / 40, 1)
 			);
 		}
 
@@ -47,7 +46,7 @@ function Header() {
 					<MobileNavMenu />
 					{/* LOGO */}
 					<Link href={"/"}>
-						<Image
+						<img
 							src={logo}
 							alt="text based logo reading audiophile"
 						/>

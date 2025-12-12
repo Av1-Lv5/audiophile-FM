@@ -1,6 +1,5 @@
 // Next components
 import Link from "next/link";
-import Image from "next/image";
 
 // images
 import logo from "@/../public/assets/logo-audiophile.svg";
@@ -16,7 +15,7 @@ function Footer() {
 				<div className="flex flex-col gap-6 sm:flex-row justify-between items-center">
 					{/* LOGO */}
 					<Link href={"/"}>
-						<Image
+						<img
 							src={logo}
 							alt="text based logo reading audiophile"
 						/>

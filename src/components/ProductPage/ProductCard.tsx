@@ -1,7 +1,7 @@
 /* Product cards in "you may also like" section.*/
 
 import Link from "next/link";
-import Button from "../UI/Button";
+import StyledButton from "../UI/Button";
 import { SanityImageObject } from "@sanity/image-url/lib/types/types";
 import { urlFor } from "@/utils/sanity-client";
 
@@ -41,7 +41,7 @@ function ProductCard(props: Props) {
 				{name}
 			</p>
 			<Link href={`/products/${slug}`}>
-				<Button text="See product" />
+				<StyledButton text="See product" />
 			</Link>
 		</div>
 	);

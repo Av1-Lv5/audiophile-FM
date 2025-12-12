@@ -1,8 +1,5 @@
 "use client";
 
-// Next components
-import Image from "next/image";
-
 // Components
 import NavItems from "@/components/NavItems";
 
@@ -24,7 +21,7 @@ function MobileNavMenu() {
 		<nav className="lg:hidden">
 			{/* hamIcon */}
 			<div className="cursor-pointer" onClick={showNavMenu}>
-				<Image src={hamIcon} alt="menu icon" />
+				<img src={hamIcon} alt="menu icon" />
 			</div>
 
 			<div

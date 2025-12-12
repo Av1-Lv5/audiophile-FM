@@ -1,5 +1,4 @@
 import { ProductCategories } from "@/types/productCategories";
-import Image from "next/image";
 import Link from "next/link";
 
 export type Props = {
@@ -10,7 +9,7 @@ function CategoryCard({ title }: Props) {
 	return (
 		<Link href={`/${title}`} className="group w-full">
 			<div className="relative flex justify-center w-full h-32 md:h-36">
-				<Image
+				<img
 					src={`/assets/shared/desktop/image-category-thumbnail-${title}.png`}
 					width={220}
 					height={220}
