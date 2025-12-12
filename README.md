@@ -1,5 +1,7 @@
 # Audiophile | E-Commerce
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/53d51843-7091-4386-835a-3e1ab92a5905/deploy-status)](https://app.netlify.com/projects/audiophile-fm-alvs/deploys)
+
 A multi-page e-commerce site for an audio electronics selling business, built with Next.js 14 and Sanity CMS.
 
 ## Tech stack
