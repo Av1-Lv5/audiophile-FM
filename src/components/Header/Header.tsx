@@ -10,7 +10,6 @@ import NavItems from "../NavItems";
 import MobileNavMenu from "./MobileNavMenu";
 
 // images
-import logo from "@/../public/assets/logo-audiophile.svg";
 import CartIcon from "./CartIcon";
 
 function Header() {
@@ -47,8 +46,8 @@ function Header() {
 					{/* LOGO */}
 					<Link href={"/"}>
 						<img
-							src={logo}
-							alt="text based logo reading audiophile"
+							src={"/assets/logo-audiophile.svg"}
+							alt="text based reading audiophile"
 						/>
 					</Link>
 				</div>

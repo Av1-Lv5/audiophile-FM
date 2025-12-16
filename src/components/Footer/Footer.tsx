@@ -1,8 +1,6 @@
 // Next components
 import Link from "next/link";
 
-// images
-import logo from "@/../public/assets/logo-audiophile.svg";
 import NavItems from "@/components/NavItems";
 
 // Components
@@ -16,7 +14,7 @@ function Footer() {
 					{/* LOGO */}
 					<Link href={"/"}>
 						<img
-							src={logo}
+							src={"/assets/logo-audiophile.svg"}
 							alt="text based logo reading audiophile"
 						/>
 					</Link>

@@ -3,9 +3,6 @@
 // Components
 import NavItems from "@/components/NavItems";
 
-// Icons
-import hamIcon from "@/../public/assets/burger-icon.svg";
-
 import { useStore } from "@nanostores/react";
 import { $menu, toggleNavMenu } from "@/stores/menu";
 import { toggleOverlay } from "@/stores/overlay";
@@ -21,7 +18,7 @@ function MobileNavMenu() {
 		<nav className="lg:hidden">
 			{/* hamIcon */}
 			<div className="cursor-pointer" onClick={showNavMenu}>
-				<img src={hamIcon} alt="menu icon" />
+				<img src={"/assets/burger-icon.svg"} alt="menu icon" />
 			</div>
 
 			<div
