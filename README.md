@@ -4,6 +4,8 @@
 
 A multi-page e-commerce site for an audio electronics selling business, built with Next.js 14 and Sanity CMS.
 
+![preview screenshot](./public/assets/audiophile-preview.png)
+
 ## Tech stack
 
 -   Sanity CMS
